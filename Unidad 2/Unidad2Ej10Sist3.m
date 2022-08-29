@@ -21,10 +21,10 @@ D2 = 1
 M = (M1*D1+M2*D2)/D
 
 disp('             M para Y4/Y1');
-D = 1-(l1+l2+l3)
 D1 = 1
 D2 = 1
 M = (M1*D1+M2*D2)/D
 
 disp('             M para Y2/Y1');
-M = 10
+D1 = 1-(l4)
+M = (10*D1)/D
