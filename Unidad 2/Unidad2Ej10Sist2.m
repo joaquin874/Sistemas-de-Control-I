@@ -21,6 +21,8 @@ D2 = 1
 M = (M1*D1+M2*D2)/D
 
 disp('             M para Y4/Y1');
+M1 = G1*G2;
+M2 = G4;
 D1 = 1
 D2 = 1
 M = (M1*D1+M2*D2)/D
