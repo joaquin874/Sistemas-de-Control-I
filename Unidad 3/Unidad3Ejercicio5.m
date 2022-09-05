@@ -14,12 +14,15 @@ Jm = 10*10^-6;
 %5.2
 disp('W(s)/V(s) = G1(s)');
 G1 = Ki/(La*Jm*s^2+(Ra*Jm+Bm)*s+Ra*Bm)
-step(G1)
 %5.3
 disp('O(s)/V(s) = G2(s)');
 G2 = Ki/(La*Jm*s^3+(Ra*Jm+Bm)*s^2+Ra*Bm*s)
-step(G2)
 %5.4
 disp('Tm(s)/V(s) = G3(s)');
 G3 = (Ki*Jm*s+Ki*Bm)/(La*Jm*s^2+(La*Bm+Ra*Jm)*s^2+Ra*Bm+Kb*Ki)
-step(G3)
+step(G1,G2,G3)
+%step(G3)
+%hold on
+%plot([0 100], [G1 G1])
+%step(G1)
+%step(G2)
