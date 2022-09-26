@@ -20,3 +20,18 @@ step(G);
 title('Respuesta al escalon del sistema de amortiguacion');
 %Nombres de los ejes
 xlabel('Tiempo [s]'); ylabel('Amplitud [m]');
+
+close all; clear all; clc
+pkg load symbolic
+pkg load control
+%s = tf('s')
+syms s Ma Xa Xs Ba Kr Ms Kc U real
+eq1=Ma*s^2*Xa==Ba*s*(Xs-Xa)+Kr*(Xs-Xa)
+eq2=Ms*s^2*Xs==Ba*s*(Xa-Xs)+Kr*(Xa-Xs)+Kc*(U-Xs)
+S=solve(eq1,eq2,Xa,U) % resuelve las ecuaciones, da estructura S.Xa y
+G=S.Xa/S.U
+G1=factor(G, s, 's')
+[N, D] = numden(G1)
+G2 = tf(sym2poly(N),sym2poly(D))
+
+%G=simplify(G)

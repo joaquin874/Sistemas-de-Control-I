@@ -21,3 +21,5 @@ H2 = K1;
 FdTLa = (s/(s+1))*(2/(s^3+5*s^2+4*s));
 FdTLcaux = FdTLa/(1+FdTLa*H1);
 FdTLc = simplify(FdTLcaux/(1+FdTLcaux*H2))
+%Ambas funciones de transferencia representan el mismo sistema
+

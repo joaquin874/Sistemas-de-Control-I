@@ -19,7 +19,7 @@ Tm = Ka*aux2;
 eq4 = Tm == M*s^2*Theta+C*s*Theta+G*Theta
 %Despejo Theta y divido por V para eliminarla y quedarme 
 %con la funcion de tranferencia Theta/V
-FT = simplify(solve(eq4, Theta)/V)
+FT = factor(solve(eq4, Theta)/V, s, 's')
 
 
 
