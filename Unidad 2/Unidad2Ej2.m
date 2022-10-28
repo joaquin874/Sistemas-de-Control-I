@@ -11,7 +11,10 @@ G1 = (53*(s+1))/((s+10)*(s+100));
 G2 = 1/s;
 kd = 16;
 
-Faux = minreal(G1/(1+G1*kd))
+Faux = minreal(G1/(1+G1*kd)) 
+%minreal simplifica la expresion para evitar errores 
+%como por ejemplo e la cantida de polos y ceros en una
+%funcion de transferencia 
 %Faux = feedback(G1, kd)
 FdtLA= minreal(Faux*kp*G2)
 FdtLC= minreal(FdtLA/(1+FdtLA))
